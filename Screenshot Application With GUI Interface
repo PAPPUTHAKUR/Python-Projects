@@ -1,0 +1,19 @@
+import pyautogui
+import tkinter as tk
+from tkinter import filedialog
+
+# Function to take a screenshot and save it
+def take_screenshot():
+    screenshot = pyautogui.screenshot()
+    file_path = filedialog.asksaveasfilename(defaultextension=".png")
+    screenshot.save(file_path)
+
+# Create a GUI window
+root = tk.Tk()
+root.title("Screenshot App")
+
+# Create a button to trigger screenshot
+btn = tk.Button(root, text="Take Screenshot", command=take_screenshot)
+btn.pack(pady=20)
+
+root.mainloop()
